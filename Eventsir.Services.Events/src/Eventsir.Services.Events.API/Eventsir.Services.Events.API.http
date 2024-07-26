@@ -1,6 +1,0 @@
-@Eventsir.Services.Events.API_HostAddress = http://localhost:5041
-
-GET {{Eventsir.Services.Events.API_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

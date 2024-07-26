@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\Eventsir.Services.Events.API.props" />
-</Project>
