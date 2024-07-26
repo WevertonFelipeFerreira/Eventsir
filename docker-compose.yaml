@@ -30,6 +30,7 @@ services:
       - my-network
 
   mongodb:
+    container_name: mongoDb
     image: mongo:latest
     ports:
       - "27017:27017"
@@ -38,8 +39,19 @@ services:
     networks:
       - my-network
 
+  rabbitMq:
+    container_name: rabbitMQ
+    image: rabbitmq:3.13-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - rabbit-data:/data/db
+    networks:
+      - my-network
 volumes:
   mongo-data:
+  rabbit-data:
 
 networks:
   my-network:
