@@ -6,6 +6,7 @@
         CORPORATIVE,
         RELIGIOUS,
         ACADEMIC,
-        SPORTIVE
+        SPORTIVE,
+        NONE
     }
 }

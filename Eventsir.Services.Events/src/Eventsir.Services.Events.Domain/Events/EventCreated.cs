@@ -1,6 +1,6 @@
 ﻿namespace Eventsir.Services.Events.Domain.Events
 {
-    public class EventCreated:IDomainEvent
+    public class EventCreated : IDomainEvent
     {
         public EventCreated(Guid id, string? name, DateTime date, string? location, string? description)
         {

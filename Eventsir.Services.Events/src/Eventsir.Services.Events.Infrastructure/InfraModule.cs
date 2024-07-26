@@ -19,7 +19,7 @@ namespace Eventsir.Services.Events.Infrastructure
             return services;
         }
 
-        public static IServiceCollection AddMongo(this IServiceCollection services)
+        private static IServiceCollection AddMongo(this IServiceCollection services)
         {
             services.AddSingleton(sp =>
             {
@@ -50,7 +50,7 @@ namespace Eventsir.Services.Events.Infrastructure
             return services;
         }
 
-        public static IServiceCollection AddRepositories(this IServiceCollection services)
+        private static IServiceCollection AddRepositories(this IServiceCollection services)
         {
             services.AddScoped<IEventRepository, EventRepository>();
 
