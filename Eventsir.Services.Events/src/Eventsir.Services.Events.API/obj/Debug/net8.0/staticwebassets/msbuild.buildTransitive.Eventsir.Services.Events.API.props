@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Eventsir.Services.Events.API.props" />
+</Project>

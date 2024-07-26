@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "tWpNAlPAJzND5tKWQ7X3NZ7MU3RVTEkrd7dfR8sLLYk=",
+  "Source": "Eventsir.Services.Events.API",
+  "BasePath": "_content/Eventsir.Services.Events.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

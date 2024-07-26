@@ -1,0 +1,6 @@
+@Eventsir.Services.Tickets.API_HostAddress = http://localhost:5090
+
+GET {{Eventsir.Services.Tickets.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

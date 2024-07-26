@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventsir.Services.Tickets.API", "src\Eventsir.Services.Tickets.API\Eventsir.Services.Tickets.API.csproj", "{D88F79AA-FE77-4DE1-A0DB-88C304CE8366}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventsir.Services.Tickets.Domain", "src\Eventsir.Services.Tickets.Domain\Eventsir.Services.Tickets.Domain.csproj", "{423A5A5A-BB20-4959-8E36-83E25562ECFD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventsir.Services.Tickets.Application", "src\Eventsir.Services.Tickets.Application\Eventsir.Services.Tickets.Application.csproj", "{EEA256B6-D7BF-417C-BBFD-B2BCB3271C92}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventsir.Services.Tickets.UnitTests", "tests\Eventsir.Services.Tickets.UnitTests\Eventsir.Services.Tickets.UnitTests.csproj", "{14190233-3C76-4442-A9C0-E187754D5E30}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{252ECA97-0B7B-49D8-92B1-6A697B7BEF3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventsir.Services.Tickets.Infrastructure", "src\Eventsir.Services.Tickets.Infrastructure\Eventsir.Services.Tickets.Infrastructure.csproj", "{2AC97221-BE69-45E9-BA89-421B17553FD8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D88F79AA-FE77-4DE1-A0DB-88C304CE8366}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D88F79AA-FE77-4DE1-A0DB-88C304CE8366}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D88F79AA-FE77-4DE1-A0DB-88C304CE8366}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D88F79AA-FE77-4DE1-A0DB-88C304CE8366}.Release|Any CPU.Build.0 = Release|Any CPU
+		{423A5A5A-BB20-4959-8E36-83E25562ECFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{423A5A5A-BB20-4959-8E36-83E25562ECFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{423A5A5A-BB20-4959-8E36-83E25562ECFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{423A5A5A-BB20-4959-8E36-83E25562ECFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEA256B6-D7BF-417C-BBFD-B2BCB3271C92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEA256B6-D7BF-417C-BBFD-B2BCB3271C92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEA256B6-D7BF-417C-BBFD-B2BCB3271C92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEA256B6-D7BF-417C-BBFD-B2BCB3271C92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14190233-3C76-4442-A9C0-E187754D5E30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14190233-3C76-4442-A9C0-E187754D5E30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14190233-3C76-4442-A9C0-E187754D5E30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14190233-3C76-4442-A9C0-E187754D5E30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AC97221-BE69-45E9-BA89-421B17553FD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AC97221-BE69-45E9-BA89-421B17553FD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AC97221-BE69-45E9-BA89-421B17553FD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AC97221-BE69-45E9-BA89-421B17553FD8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{14190233-3C76-4442-A9C0-E187754D5E30} = {252ECA97-0B7B-49D8-92B1-6A697B7BEF3F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3BF3E081-4405-4367-8314-ED49FF71098D}
+	EndGlobalSection
+EndGlobal

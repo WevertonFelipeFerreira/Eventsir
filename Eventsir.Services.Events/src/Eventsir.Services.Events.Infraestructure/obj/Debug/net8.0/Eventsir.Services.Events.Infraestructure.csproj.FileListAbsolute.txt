@@ -1,0 +1,15 @@
+C:\Users\verta\source\repos\Eventsir\Eventsir.Services.Events\src\Eventsir.Services.Events.Infraestructure\bin\Debug\net8.0\Eventsir.Services.Events.Infraestructure.deps.json
+C:\Users\verta\source\repos\Eventsir\Eventsir.Services.Events\src\Eventsir.Services.Events.Infraestructure\bin\Debug\net8.0\Eventsir.Services.Events.Infraestructure.dll
+C:\Users\verta\source\repos\Eventsir\Eventsir.Services.Events\src\Eventsir.Services.Events.Infraestructure\bin\Debug\net8.0\Eventsir.Services.Events.Infraestructure.pdb
+C:\Users\verta\source\repos\Eventsir\Eventsir.Services.Events\src\Eventsir.Services.Events.Infraestructure\bin\Debug\net8.0\Eventsir.Services.Events.Domain.dll
+C:\Users\verta\source\repos\Eventsir\Eventsir.Services.Events\src\Eventsir.Services.Events.Infraestructure\bin\Debug\net8.0\Eventsir.Services.Events.Domain.pdb
+C:\Users\verta\source\repos\Eventsir\Eventsir.Services.Events\src\Eventsir.Services.Events.Infraestructure\obj\Debug\net8.0\Eventsir.Services.Events.Infraestructure.csproj.AssemblyReference.cache
+C:\Users\verta\source\repos\Eventsir\Eventsir.Services.Events\src\Eventsir.Services.Events.Infraestructure\obj\Debug\net8.0\Eventsir.Services.Events.Infraestructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\verta\source\repos\Eventsir\Eventsir.Services.Events\src\Eventsir.Services.Events.Infraestructure\obj\Debug\net8.0\Eventsir.Services.Events.Infraestructure.AssemblyInfoInputs.cache
+C:\Users\verta\source\repos\Eventsir\Eventsir.Services.Events\src\Eventsir.Services.Events.Infraestructure\obj\Debug\net8.0\Eventsir.Services.Events.Infraestructure.AssemblyInfo.cs
+C:\Users\verta\source\repos\Eventsir\Eventsir.Services.Events\src\Eventsir.Services.Events.Infraestructure\obj\Debug\net8.0\Eventsir.Services.Events.Infraestructure.csproj.CoreCompileInputs.cache
+C:\Users\verta\source\repos\Eventsir\Eventsir.Services.Events\src\Eventsir.Services.Events.Infraestructure\obj\Debug\net8.0\Eventsir.Services.Events.Infraestructure.csproj.CopyComplete
+C:\Users\verta\source\repos\Eventsir\Eventsir.Services.Events\src\Eventsir.Services.Events.Infraestructure\obj\Debug\net8.0\Eventsir.Services.Events.Infraestructure.dll
+C:\Users\verta\source\repos\Eventsir\Eventsir.Services.Events\src\Eventsir.Services.Events.Infraestructure\obj\Debug\net8.0\refint\Eventsir.Services.Events.Infraestructure.dll
+C:\Users\verta\source\repos\Eventsir\Eventsir.Services.Events\src\Eventsir.Services.Events.Infraestructure\obj\Debug\net8.0\Eventsir.Services.Events.Infraestructure.pdb
+C:\Users\verta\source\repos\Eventsir\Eventsir.Services.Events\src\Eventsir.Services.Events.Infraestructure\obj\Debug\net8.0\ref\Eventsir.Services.Events.Infraestructure.dll

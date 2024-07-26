@@ -1,0 +1,11 @@
+C:\Users\verta\source\repos\Eventsir\Eventsir.Services.Tickets\src\Eventsir.Services.Tickets.Application\bin\Debug\net8.0\Eventsir.Services.Tickets.Application.deps.json
+C:\Users\verta\source\repos\Eventsir\Eventsir.Services.Tickets\src\Eventsir.Services.Tickets.Application\bin\Debug\net8.0\Eventsir.Services.Tickets.Application.dll
+C:\Users\verta\source\repos\Eventsir\Eventsir.Services.Tickets\src\Eventsir.Services.Tickets.Application\bin\Debug\net8.0\Eventsir.Services.Tickets.Application.pdb
+C:\Users\verta\source\repos\Eventsir\Eventsir.Services.Tickets\src\Eventsir.Services.Tickets.Application\obj\Debug\net8.0\Eventsir.Services.Tickets.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\verta\source\repos\Eventsir\Eventsir.Services.Tickets\src\Eventsir.Services.Tickets.Application\obj\Debug\net8.0\Eventsir.Services.Tickets.Application.AssemblyInfoInputs.cache
+C:\Users\verta\source\repos\Eventsir\Eventsir.Services.Tickets\src\Eventsir.Services.Tickets.Application\obj\Debug\net8.0\Eventsir.Services.Tickets.Application.AssemblyInfo.cs
+C:\Users\verta\source\repos\Eventsir\Eventsir.Services.Tickets\src\Eventsir.Services.Tickets.Application\obj\Debug\net8.0\Eventsir.Services.Tickets.Application.csproj.CoreCompileInputs.cache
+C:\Users\verta\source\repos\Eventsir\Eventsir.Services.Tickets\src\Eventsir.Services.Tickets.Application\obj\Debug\net8.0\Eventsir.Services.Tickets.Application.dll
+C:\Users\verta\source\repos\Eventsir\Eventsir.Services.Tickets\src\Eventsir.Services.Tickets.Application\obj\Debug\net8.0\refint\Eventsir.Services.Tickets.Application.dll
+C:\Users\verta\source\repos\Eventsir\Eventsir.Services.Tickets\src\Eventsir.Services.Tickets.Application\obj\Debug\net8.0\Eventsir.Services.Tickets.Application.pdb
+C:\Users\verta\source\repos\Eventsir\Eventsir.Services.Tickets\src\Eventsir.Services.Tickets.Application\obj\Debug\net8.0\ref\Eventsir.Services.Tickets.Application.dll
