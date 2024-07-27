@@ -7,6 +7,7 @@ EXPOSE 443
 
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+RUN dotnet dev-certs https
 WORKDIR /src
 COPY ["src/Eventsir.Services.Events.API/Eventsir.Services.Events.API.csproj", "src/Eventsir.Services.Events.API/"]
 COPY ["src/Eventsir.Services.Events.Application/Eventsir.Services.Events.Application.csproj", "src/Eventsir.Services.Events.Application/"]
@@ -23,5 +24,6 @@ RUN dotnet publish "Eventsir.Services.Events.API.csproj" -c Release -o /app/publ
 
 FROM base AS final
 WORKDIR /app
+COPY --from=publish /root/.dotnet/corefx/cryptography/x509stores/my/* /root/.dotnet/corefx/cryptography/x509stores/my/
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "Eventsir.Services.Events.API.dll", "--server.urls", "https://+:5000"]
