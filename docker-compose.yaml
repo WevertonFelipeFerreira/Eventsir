@@ -10,6 +10,7 @@ services:
       - "5001:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:5001
     depends_on:
       - mongodb
     networks:

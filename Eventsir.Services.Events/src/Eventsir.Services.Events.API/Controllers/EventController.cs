@@ -11,7 +11,7 @@ namespace Eventsir.Services.Events.API.Controllers
         public async Task<IActionResult> AddOrder([FromServices] IAddEventUseCase useCase, [FromBody] AddEventInput input)
         {
             var output = await useCase.Execute(input);
-            return Created(output);
+            return Created(nameof(AddOrder), output);
         }
     }
 }
