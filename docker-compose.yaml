@@ -12,6 +12,7 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=https://+:8080;http://+:8081
       - Mongo__ConnectionString=mongodb://host.docker.internal:27017/
+      - RabbitMQ__Hostname=rabbitmq
     depends_on:
       - mongodb
     networks:
@@ -30,6 +31,9 @@ services:
   rabbitMq:
     container_name: rabbitMQ
     image: rabbitmq:3.13-management
+    hostname: "rabbitmq"
+    labels:
+      NAME: "rabbitmq"
     ports:
       - "5672:5672"
       - "15672:15672"
