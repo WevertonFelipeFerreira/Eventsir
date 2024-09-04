@@ -1,7 +1,9 @@
 ﻿using Eventsir.Services.Events.Domain.Repositories;
+using Eventsir.Services.Events.Domain.Repositories.UoW;
 using Eventsir.Services.Events.Infrastructure.MessageBus;
 using Eventsir.Services.Events.Infrastructure.Persistence;
 using Eventsir.Services.Events.Infrastructure.Persistence.Repositories;
+using Eventsir.Services.Events.Infrastructure.Persistence.Repositories.UoW;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MongoDB.Bson;
@@ -55,6 +57,7 @@ namespace Eventsir.Services.Events.Infrastructure
 
         private static IServiceCollection AddRepositories(this IServiceCollection services)
         {
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IEventRepository, EventRepository>();
 
             return services;

@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventsir.Services.Events.Un
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{DA743057-BA04-4321-B272-C06197137BEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventsir.Services.Events.Infrastructure", "src\Eventsir.Services.Events.Infrastructure\Eventsir.Services.Events.Infrastructure.csproj", "{5D29AE60-E29A-4B36-93D7-0F6D380F491D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventsir.Services.Events.Infrastructure", "src\Eventsir.Services.Events.Infrastructure\Eventsir.Services.Events.Infrastructure.csproj", "{5D29AE60-E29A-4B36-93D7-0F6D380F491D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +41,10 @@ Global
 		{5D29AE60-E29A-4B36-93D7-0F6D380F491D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D29AE60-E29A-4B36-93D7-0F6D380F491D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D29AE60-E29A-4B36-93D7-0F6D380F491D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAA262EB-0F72-4DA4-80F4-00A77D11D4CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAA262EB-0F72-4DA4-80F4-00A77D11D4CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAA262EB-0F72-4DA4-80F4-00A77D11D4CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAA262EB-0F72-4DA4-80F4-00A77D11D4CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

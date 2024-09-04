@@ -11,20 +11,10 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=https://+:8080;http://+:8081
-      - Mongo__ConnectionString=mongodb://host.docker.internal:27017/
+      - Mongo__ConnectionString=mongodb+srv://<YourMongoDbRepSet>.mongodb.net
       - RabbitMQ__Hostname=rabbitmq
     depends_on:
-      - mongodb
-    networks:
-      - my-network
-
-  mongodb:
-    container_name: mongoDb
-    image: mongo:latest
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongo-data:/data/db
+      - rabbitMq
     networks:
       - my-network
 
@@ -42,7 +32,6 @@ services:
     networks:
       - my-network
 volumes:
-  mongo-data:
   rabbit-data:
 
 networks:

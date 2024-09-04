@@ -15,11 +15,20 @@ namespace Eventsir.Services.Events.Application.UseCases.AddEvent
         public async Task<AddEventOutput> Execute(AddEventInput input)
         {
             var entity = input.ToEntity();
+            try
+            {
+                _eventRepository.AddAsync(entity);
+                await _eventRepository.CommitChangesAsync();
 
-            await _eventRepository.AddAsync(entity);
-            _eventProcessor.Execute(entity.Events);
+                return new AddEventOutput(entity.Id);
+            }
+            catch(Exception ex)
+            {
+                _eventRepository.Rollback();
 
-            return new AddEventOutput(entity.Id);
+                Console.WriteLine(ex.Message);
+                return null!;
+            }
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using Eventsir.Services.Events.Domain.Entities;
+using Eventsir.Services.Events.Domain.Events;
 using Eventsir.Services.Events.Domain.Repositories;
+using Eventsir.Services.Events.Domain.Repositories.UoW;
 using MongoDB.Driver;
 
 namespace Eventsir.Services.Events.Infrastructure.Persistence.Repositories
@@ -7,13 +9,26 @@ namespace Eventsir.Services.Events.Infrastructure.Persistence.Repositories
     public class EventRepository : IEventRepository
     {
         private readonly IMongoCollection<Event> _collection;
-        public EventRepository(IMongoDatabase database)
+        private readonly IMongoCollection<EventCreated> _outboxCollection;
+        private readonly IUnitOfWork _unitOfWork;
+        public EventRepository(IMongoDatabase database, IUnitOfWork unitOfWork)
         {
             _collection = database.GetCollection<Event>("events");
+            _outboxCollection = database.GetCollection<EventCreated>("outbox");
+            _unitOfWork = unitOfWork;
         }
-        public async Task AddAsync(Event @event)
+        public void AddAsync(Event @event)
         {
-            await _collection.InsertOneAsync(@event);
+            Action operation = () => _collection.InsertOne(_unitOfWork.Session as IClientSessionHandle, @event);
+            _unitOfWork.AddOperation(operation);
+
+            if (@event.Events.Any())
+            {
+                // TODO Estudar possibilidade de serializar os eventos genericos IDomainEvent
+                List<EventCreated> eventss = @event.Events.Select(x => (EventCreated)x).ToList();
+                Action outboxOperation = () => _outboxCollection.InsertMany(_unitOfWork.Session as IClientSessionHandle, eventss);
+                _unitOfWork.AddOperation(outboxOperation);
+            }
         }
 
         public async Task<Event> GetByIdAsync(Guid id)
@@ -21,9 +36,20 @@ namespace Eventsir.Services.Events.Infrastructure.Persistence.Repositories
             return await _collection.Find(c => c.Id == id).SingleOrDefaultAsync();
         }
 
-        public async Task UpdateAsync(Event @event)
+        public void UpdateAsync(Event @event)
         {
-            await _collection.ReplaceOneAsync(o => o.Id == @event.Id, @event);
+            Action operation = () => _collection.ReplaceOne(_unitOfWork.Session as IClientSessionHandle, x => x.Id == @event.Id, @event);
+            _unitOfWork.AddOperation(operation);
+        }
+
+        public void Rollback()
+        {
+            _unitOfWork.CleanOperations();
+        }
+
+        public async Task CommitChangesAsync()
+        {
+            await _unitOfWork.CommitChanges();
         }
     }
 }
