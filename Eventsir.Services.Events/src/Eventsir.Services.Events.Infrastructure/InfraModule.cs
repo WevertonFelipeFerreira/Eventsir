@@ -3,10 +3,13 @@ using Eventsir.Services.Events.Domain.Repositories.UoW;
 using Eventsir.Services.Events.Infrastructure.MessageBus;
 using Eventsir.Services.Events.Infrastructure.Persistence;
 using Eventsir.Services.Events.Infrastructure.Persistence.Repositories;
+using Eventsir.Services.Events.Infrastructure.Persistence.Repositories.Serializers;
 using Eventsir.Services.Events.Infrastructure.Persistence.Repositories.UoW;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MongoDB.Bson;
+using MongoDB.Bson.Serialization;
+using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Driver;
 using RabbitMQ.Client;
 
@@ -38,14 +41,16 @@ namespace Eventsir.Services.Events.Infrastructure
 
             services.AddSingleton<IMongoClient>(sp =>
             {
+                var guidSerializer = new GuidSerializer(GuidRepresentation.Standard);
+                BsonSerializer.RegisterSerializer(typeof(Guid), guidSerializer);
+                BsonSerializer.RegisterSerializer(new DomainEventSerializer());
+
                 var options = sp.GetService<MongoDbOptions>();
                 return new MongoClient(options?.ConnectionString);
             });
 
             services.AddTransient(sp =>
             {
-                BsonDefaults.GuidRepresentation = GuidRepresentation.Standard;
-
                 var options = sp.GetService<MongoDbOptions>();
                 var mongoClient = sp.GetService<IMongoClient>();
 

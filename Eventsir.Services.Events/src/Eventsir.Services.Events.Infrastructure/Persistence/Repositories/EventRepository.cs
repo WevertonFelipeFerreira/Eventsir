@@ -9,12 +9,12 @@ namespace Eventsir.Services.Events.Infrastructure.Persistence.Repositories
     public class EventRepository : IEventRepository
     {
         private readonly IMongoCollection<Event> _collection;
-        private readonly IMongoCollection<EventCreated> _outboxCollection;
+        private readonly IMongoCollection<IDomainEvent> _outboxCollection;
         private readonly IUnitOfWork _unitOfWork;
         public EventRepository(IMongoDatabase database, IUnitOfWork unitOfWork)
         {
             _collection = database.GetCollection<Event>("events");
-            _outboxCollection = database.GetCollection<EventCreated>("outbox");
+            _outboxCollection = database.GetCollection<IDomainEvent>("outbox");
             _unitOfWork = unitOfWork;
         }
         public void AddAsync(Event @event)
@@ -24,9 +24,7 @@ namespace Eventsir.Services.Events.Infrastructure.Persistence.Repositories
 
             if (@event.Events.Any())
             {
-                // TODO Estudar possibilidade de serializar os eventos genericos IDomainEvent
-                List<EventCreated> eventss = @event.Events.Select(x => (EventCreated)x).ToList();
-                Action outboxOperation = () => _outboxCollection.InsertMany(_unitOfWork.Session as IClientSessionHandle, eventss);
+                Action outboxOperation = () => _outboxCollection.InsertMany(_unitOfWork.Session as IClientSessionHandle, @event.Events);
                 _unitOfWork.AddOperation(outboxOperation);
             }
         }
