@@ -41,8 +41,6 @@ namespace Eventsir.Services.Events.Infrastructure
 
             services.AddSingleton<IMongoClient>(sp =>
             {
-                var guidSerializer = new GuidSerializer(GuidRepresentation.Standard);
-                BsonSerializer.RegisterSerializer(typeof(Guid), guidSerializer);
                 BsonSerializer.RegisterSerializer(new DomainEventSerializer());
 
                 var options = sp.GetService<MongoDbOptions>();
@@ -54,7 +52,7 @@ namespace Eventsir.Services.Events.Infrastructure
                 var options = sp.GetService<MongoDbOptions>();
                 var mongoClient = sp.GetService<IMongoClient>();
 
-                return mongoClient?.GetDatabase(options?.Database);
+                return mongoClient!.GetDatabase(options?.Database, new MongoDatabaseSettings { GuidRepresentation = GuidRepresentation.Standard});
             });
 
             return services;
