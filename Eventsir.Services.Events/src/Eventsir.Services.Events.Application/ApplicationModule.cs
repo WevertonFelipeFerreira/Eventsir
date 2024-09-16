@@ -1,4 +1,5 @@
 ﻿using Eventsir.Services.Events.Application.UseCases.AddEvent;
+using Eventsir.Services.Events.Application.UseCases.GetEventById;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Eventsir.Services.Events.Application
@@ -15,6 +16,7 @@ namespace Eventsir.Services.Events.Application
         private static IServiceCollection AddUseCases(this IServiceCollection services)
         {
             services.AddScoped<IAddEventUseCase, AddEventUseCase>();
+            services.AddScoped<IGetEventByIdUseCase, GetEventByIdUseCase>();
 
             return services;
         }

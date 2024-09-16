@@ -23,8 +23,6 @@ namespace Eventsir.Services.Events.Infrastructure.Persistence.Repositories.Seria
 
         public void Serialize(BsonSerializationContext context, BsonSerializationArgs args, object value)
         {
-            var bsonWriter = context.Writer;
-
             if (value is EventCreated eventCreated)
             {
                 BsonSerializer.Serialize(context.Writer, eventCreated);
@@ -37,8 +35,6 @@ namespace Eventsir.Services.Events.Infrastructure.Persistence.Repositories.Seria
 
         public void Serialize(BsonSerializationContext context, BsonSerializationArgs args, IDomainEvent value)
         {
-            var bsonWriter = context.Writer;
-
             if (value is EventCreated eventCreated)
             {
                 BsonSerializer.Serialize(context.Writer, eventCreated);

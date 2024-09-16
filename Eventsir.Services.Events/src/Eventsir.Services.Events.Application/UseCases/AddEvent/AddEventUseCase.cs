@@ -1,16 +1,13 @@
 ﻿using Eventsir.Services.Events.Domain.Repositories;
-using Eventsir.Services.Events.Infrastructure.MessageBus;
 
 namespace Eventsir.Services.Events.Application.UseCases.AddEvent
 {
     public class AddEventUseCase : IAddEventUseCase
     {
         private readonly IEventRepository _eventRepository;
-        private readonly IEventProcessor _eventProcessor;
-        public AddEventUseCase(IEventRepository eventRepository, IEventProcessor eventProcessor)
+        public AddEventUseCase(IEventRepository eventRepository)
         {
             _eventRepository = eventRepository;
-            _eventProcessor = eventProcessor;
         }
         public async Task<AddEventOutput> Execute(AddEventInput input)
         {
@@ -22,7 +19,7 @@ namespace Eventsir.Services.Events.Application.UseCases.AddEvent
 
                 return new AddEventOutput(entity.Id);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 _eventRepository.Rollback();
 
