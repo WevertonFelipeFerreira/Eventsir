@@ -1,4 +1,5 @@
 ﻿using Eventsir.Services.Events.Domain.Repositories;
+using Eventsir.Services.Events.SharedKernel.Result;
 
 namespace Eventsir.Services.Events.Application.UseCases.GetEventById
 {
@@ -10,13 +11,13 @@ namespace Eventsir.Services.Events.Application.UseCases.GetEventById
             _eventRepository = eventRepository;
         }
 
-        public async Task<GetEventByIdOutput?> Execute(Guid id)
+        public async Task<Result<GetEventByIdOutput>> Execute(Guid id)
         {
             var eventEntity = await _eventRepository.GetByIdAsync(id);
             if (eventEntity is null)
-                return null;
+                return Result<GetEventByIdOutput>.CreateError("Event not found", EResultType.NotFound);
 
-            return GetEventByIdOutput.ToModel(eventEntity);
+            return Result<GetEventByIdOutput>.CreateSuccess(GetEventByIdOutput.ToModel(eventEntity));
         }
     }
 }

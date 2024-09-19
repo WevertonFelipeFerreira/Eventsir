@@ -1,7 +1,9 @@
-﻿namespace Eventsir.Services.Events.Application.UseCases.AddEvent
+﻿using Eventsir.Services.Events.SharedKernel.Result;
+
+namespace Eventsir.Services.Events.Application.UseCases.AddEvent
 {
     public interface IAddEventUseCase
     {
-        Task<AddEventOutput> Execute(AddEventInput input);
+        Task<Result<AddEventOutput>> Execute(AddEventInput input);
     }
 }

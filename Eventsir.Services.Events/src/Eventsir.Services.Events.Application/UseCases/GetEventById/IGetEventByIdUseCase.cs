@@ -1,7 +1,9 @@
-﻿namespace Eventsir.Services.Events.Application.UseCases.GetEventById
+﻿using Eventsir.Services.Events.SharedKernel.Result;
+
+namespace Eventsir.Services.Events.Application.UseCases.GetEventById
 {
     public interface IGetEventByIdUseCase
     {
-        Task<GetEventByIdOutput?> Execute(Guid id);
+        Task<Result<GetEventByIdOutput>> Execute(Guid id);
     }
 }

@@ -13,7 +13,8 @@ COPY ["src/Eventsir.Services.Events.API/Eventsir.Services.Events.API.csproj", "s
 COPY ["src/Eventsir.Services.Events.Application/Eventsir.Services.Events.Application.csproj", "src/Eventsir.Services.Events.Application/"]
 COPY ["src/Eventsir.Services.Events.Domain/Eventsir.Services.Events.Domain.csproj", "src/Eventsir.Services.Events.Domain/"]
 COPY ["src/Eventsir.Services.Events.Infrastructure/Eventsir.Services.Events.Infrastructure.csproj", "src/Eventsir.Services.Events.Infrastructure/"]
-COPY ["tests/Eventsir.Services.Events.UnitTests/Eventsir.Services.Events.UnitTests.csproj", "tests/Eventsir.Services.Events.Infrastructure/"]
+COPY ["src/Eventsir.Services.Events.SharedKernel/Eventsir.Services.Events.SharedKernel.csproj", "src/Eventsir.Services.Events.SharedKernel/"]
+COPY ["tests/Eventsir.Services.Events.UnitTests/Eventsir.Services.Events.UnitTests.csproj", "tests/Eventsir.Services.Events.UnitTests/"]
 RUN dotnet restore "src/Eventsir.Services.Events.API/Eventsir.Services.Events.API.csproj"
 COPY . .
 WORKDIR "/src/src/Eventsir.Services.Events.API"
