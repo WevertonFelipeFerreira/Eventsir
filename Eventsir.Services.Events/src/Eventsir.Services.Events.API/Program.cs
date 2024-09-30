@@ -1,5 +1,7 @@
 using Eventsir.Services.Events.Application;
 using Eventsir.Services.Events.Infrastructure;
+using SharedKernel.Handlers;
+//using Hellang.Middleware.ProblemDetails;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +10,17 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services
     .AddInfrastructure()
     .AddApplication();
+
+builder.Services
+    .AddProblemDetails(options =>
+        options.CustomizeProblemDetails = ctx =>
+        {
+            ctx.ProblemDetails.Extensions.Add("trace-id", ctx.HttpContext.TraceIdentifier);
+            ctx.ProblemDetails.Extensions.Add("instance", (string)ctx.HttpContext.Request.Path);
+        }
+        );
+
+builder.Services.AddExceptionHandler<ExceptionHandler>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -22,6 +35,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseExceptionHandler();
+
+app.UseStatusCodePages();
 
 app.UseAuthorization();
 

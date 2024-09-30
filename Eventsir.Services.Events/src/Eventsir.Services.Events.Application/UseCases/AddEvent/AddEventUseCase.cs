@@ -1,5 +1,5 @@
 ﻿using Eventsir.Services.Events.Domain.Repositories;
-using Eventsir.Services.Events.SharedKernel.Result;
+using SharedKernel.Result;
 
 namespace Eventsir.Services.Events.Application.UseCases.AddEvent
 {

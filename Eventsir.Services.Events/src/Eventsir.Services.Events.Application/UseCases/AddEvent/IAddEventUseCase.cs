@@ -1,4 +1,4 @@
-﻿using Eventsir.Services.Events.SharedKernel.Result;
+﻿using SharedKernel.Result;
 
 namespace Eventsir.Services.Events.Application.UseCases.AddEvent
 {

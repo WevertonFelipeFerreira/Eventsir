@@ -1,7 +1,7 @@
 ﻿using Eventsir.Services.Events.Application.UseCases.AddEvent;
 using Eventsir.Services.Events.Application.UseCases.GetEventById;
 using Microsoft.AspNetCore.Mvc;
-using Eventsir.Services.Events.SharedKernel.Result;
+using SharedKernel.Result;
 
 namespace Eventsir.Services.Events.API.Controllers
 {

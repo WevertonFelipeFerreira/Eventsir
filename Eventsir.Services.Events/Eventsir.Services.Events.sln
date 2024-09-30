@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{DA743057
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventsir.Services.Events.Infrastructure", "src\Eventsir.Services.Events.Infrastructure\Eventsir.Services.Events.Infrastructure.csproj", "{5D29AE60-E29A-4B36-93D7-0F6D380F491D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventsir.Services.Events.SharedKernel", "src\Eventsir.Services.Events.SharedKernel\Eventsir.Services.Events.SharedKernel.csproj", "{6E585105-58C8-4456-B05E-0B2E666A5737}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = ".SharedKernel", "src\SharedKernel\SharedKernel.csproj", "{6E585105-58C8-4456-B05E-0B2E666A5737}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

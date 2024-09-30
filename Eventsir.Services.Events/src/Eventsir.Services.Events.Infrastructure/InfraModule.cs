@@ -9,7 +9,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
-using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Driver;
 using RabbitMQ.Client;
 
@@ -52,7 +51,7 @@ namespace Eventsir.Services.Events.Infrastructure
                 var options = sp.GetService<MongoDbOptions>();
                 var mongoClient = sp.GetService<IMongoClient>();
 
-                return mongoClient!.GetDatabase(options?.Database, new MongoDatabaseSettings { GuidRepresentation = GuidRepresentation.Standard});
+                return mongoClient!.GetDatabase(options?.Database, new MongoDatabaseSettings { GuidRepresentation = GuidRepresentation.Standard });
             });
 
             return services;

@@ -1,4 +1,4 @@
-﻿namespace Eventsir.Services.Events.SharedKernel.Result
+﻿namespace SharedKernel.Result
 {
     public enum EResultType
     {
