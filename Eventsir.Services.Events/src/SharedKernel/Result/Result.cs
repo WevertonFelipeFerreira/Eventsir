@@ -1,7 +1,10 @@
-﻿namespace SharedKernel.Result
+﻿using Flunt.Notifications;
+
+namespace SharedKernel.Result
 {
     public class Result<TValue>
     {
+        public IEnumerable<Notification> Notifications { get; private set; }
         public TValue? Value { get; private set; }
         public bool IsValid { get; private set; }
         public EResultType ResultType { get; private set; }
@@ -12,6 +15,7 @@
             IsValid = isValid;
             ResultType = resultType;
             ErrorMessage = errorMessage;
+            Notifications = new List<Notification>();
         }
 
         public static Result<TValue> CreateSuccess(TValue value, EResultType resultType = EResultType.Success) => new Result<TValue>(value, true, resultType);
