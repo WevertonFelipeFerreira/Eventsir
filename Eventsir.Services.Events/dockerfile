@@ -13,7 +13,7 @@ COPY ["src/Eventsir.Services.Events.API/Eventsir.Services.Events.API.csproj", "s
 COPY ["src/Eventsir.Services.Events.Application/Eventsir.Services.Events.Application.csproj", "src/Eventsir.Services.Events.Application/"]
 COPY ["src/Eventsir.Services.Events.Domain/Eventsir.Services.Events.Domain.csproj", "src/Eventsir.Services.Events.Domain/"]
 COPY ["src/Eventsir.Services.Events.Infrastructure/Eventsir.Services.Events.Infrastructure.csproj", "src/Eventsir.Services.Events.Infrastructure/"]
-COPY ["src/Eventsir.Services.Events.SharedKernel/Eventsir.Services.Events.SharedKernel.csproj", "src/Eventsir.Services.Events.SharedKernel/"]
+COPY ["src/SharedKernel/SharedKernel.csproj", "src/SharedKernel/"]
 COPY ["tests/Eventsir.Services.Events.UnitTests/Eventsir.Services.Events.UnitTests.csproj", "tests/Eventsir.Services.Events.UnitTests/"]
 RUN dotnet restore "src/Eventsir.Services.Events.API/Eventsir.Services.Events.API.csproj"
 COPY . .
@@ -27,4 +27,4 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /root/.dotnet/corefx/cryptography/x509stores/my/* /root/.dotnet/corefx/cryptography/x509stores/my/
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Eventsir.Services.Events.API.dll", "--server.urls", "https://+:5000"]
+ENTRYPOINT ["dotnet", "Eventsir.Services.Events.API.dll", "--urls", "http://+:80;https://+:443"]
