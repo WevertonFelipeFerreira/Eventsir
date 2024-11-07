@@ -11,4 +11,8 @@
     <PackageReference Include="Flunt.Extensions.AspNet" Version="1.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SharedKernel\SharedKernel.csproj" />
+  </ItemGroup>
+
 </Project>

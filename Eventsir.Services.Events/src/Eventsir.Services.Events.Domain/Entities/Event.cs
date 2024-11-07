@@ -2,6 +2,7 @@
 using Eventsir.Services.Events.Domain.Events;
 using Flunt.Notifications;
 using Flunt.Validations;
+using SharedKernel;
 
 namespace Eventsir.Services.Events.Domain.Entities
 {
@@ -36,7 +37,7 @@ namespace Eventsir.Services.Events.Domain.Entities
         {
             AddNotifications(new Contract<Notification>()
             .Requires()
-                .IsNotNull(Name, nameof(Name), "name nulo")
+                .IsNotNull(Name, JsonPointer.Point<Event>(x => x.Name!), "name nulo")
             );
         }
     }
