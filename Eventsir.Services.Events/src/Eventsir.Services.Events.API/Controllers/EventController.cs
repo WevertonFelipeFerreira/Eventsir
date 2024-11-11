@@ -1,14 +1,16 @@
 ﻿using Eventsir.Services.Events.Application.UseCases.AddEvent;
 using Eventsir.Services.Events.Application.UseCases.GetEventById;
 using Microsoft.AspNetCore.Mvc;
+using SharedKernel;
 using SharedKernel.Result;
+using System.Net;
 
 namespace Eventsir.Services.Events.API.Controllers
 {
     [ApiController]
+    //[ApiExplorerSettings(GroupName = "Events")]
     [Route("api/events")]
-    //TODO Create a new controller base to standardize all errors in problem details
-    public class EventController : ControllerBase
+    public class EventController : ApiControllerBase
     {
         [HttpPost]
         public async Task<IActionResult> AddEvent([FromServices] IAddEventUseCase useCase, [FromBody] AddEventInput input)
@@ -19,13 +21,14 @@ namespace Eventsir.Services.Events.API.Controllers
             {
                 return UnprocessableEntity(new { ErrorMessage = result.ErrorMessage ?? "Unprocessable entity" });
             }
-
-            return Created(nameof(AddEvent), result.Value);
+            return Created("www.google.com", result.Value);
+            //return SuccessResponse(result, HttpStatusCode.Created);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetEventById([FromServices] IGetEventByIdUseCase useCase, Guid id)
         {
+            throw new Exception("sapoooooooooo");
             var result = await useCase.Execute(id);
 
             if (result.ResultType == EResultType.NotFound)
