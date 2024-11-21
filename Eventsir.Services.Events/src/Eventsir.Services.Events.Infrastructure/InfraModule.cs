@@ -1,7 +1,9 @@
-﻿using Eventsir.Services.Events.Domain.Repositories;
+﻿using Eventsir.Services.Events.Domain.Cache;
+using Eventsir.Services.Events.Domain.Repositories;
 using Eventsir.Services.Events.Domain.Repositories.UoW;
 using Eventsir.Services.Events.Infrastructure.MessageBus;
 using Eventsir.Services.Events.Infrastructure.Persistence;
+using Eventsir.Services.Events.Infrastructure.Persistence.Cache;
 using Eventsir.Services.Events.Infrastructure.Persistence.Repositories;
 using Eventsir.Services.Events.Infrastructure.Persistence.Repositories.Serializers;
 using Eventsir.Services.Events.Infrastructure.Persistence.Repositories.UoW;
@@ -21,7 +23,22 @@ namespace Eventsir.Services.Events.Infrastructure
             services
                 .AddMongo()
                 .AddRepositories()
-                .AddRabbitMq();
+                .AddRabbitMq()
+                .AddRedis();
+
+            return services;
+        }
+
+        private static IServiceCollection AddRedis(this IServiceCollection services) 
+        {
+            var config = services.BuildServiceProvider().GetService<IConfiguration>();
+
+            services.AddStackExchangeRedisCache(options =>
+            {
+                options.Configuration = config!.GetConnectionString("Redis");
+            });
+
+            services.AddScoped<IRedisCacheService, RedisCacheService>();
 
             return services;
         }

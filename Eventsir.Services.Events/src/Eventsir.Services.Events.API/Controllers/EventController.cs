@@ -8,9 +8,8 @@ using System.Net;
 namespace Eventsir.Services.Events.API.Controllers
 {
     [ApiController]
-    //[ApiExplorerSettings(GroupName = "Events")]
     [Route("api/events")]
-    public class EventController : ApiControllerBase
+    public class EventController : ControllerBase //ApiControllerBase
     {
         [HttpPost]
         public async Task<IActionResult> AddEvent([FromServices] IAddEventUseCase useCase, [FromBody] AddEventInput input)
@@ -28,7 +27,6 @@ namespace Eventsir.Services.Events.API.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetEventById([FromServices] IGetEventByIdUseCase useCase, Guid id)
         {
-            throw new Exception("sapoooooooooo");
             var result = await useCase.Execute(id);
 
             if (result.ResultType == EResultType.NotFound)

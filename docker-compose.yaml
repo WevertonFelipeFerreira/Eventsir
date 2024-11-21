@@ -14,6 +14,7 @@ services:
       - ASPNETCORE_URLS=https://+:443;http://+:80
       - Mongo__ConnectionString=mongodb+srv://<YourMongoDbRepSet>.mongodb.net
       - RabbitMQ__Hostname=rabbitmq
+      - ConnectionStrings__Redis=redis:6379,defaultDatabase=0
     depends_on:
       - rabbitMq
     networks:
@@ -172,8 +173,32 @@ services:
     networks:
       - my-network
 
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis-data:/data
+    networks:
+      - my-network
+
+  redisinsight:
+    image: redis/redisinsight:latest
+    container_name: redisinsight
+    ports:
+      - "5540:5540"
+    depends_on:
+      - redis
+    environment:
+      - REDIS_HOST=redis 
+    networks:
+      - my-network
+
 volumes:
   rabbit-data:
+  redis-data:
 
 networks:
   default:
